@@ -28,8 +28,8 @@ class Robot:
 
     def move(self, dt):
         self.theta += self.w * dt
-        self.x += ((self.vl+self.vr)/2) * math.cos(self.theta) * dt
-        self.y += ((self.vl+self.vr)/2) * math.sin(self.theta) * dt
+        self.x += ((self.vl+self.vr)/2) * math.cos(self.w) * dt
+        self.y += ((self.vl+self.vr)/2) * math.sin(self.w) * dt
         # self.vr = self.u + ((self.width / 2) * self.w)
         # self.vl = self.u - ((self.width / 2) * self.w)
 

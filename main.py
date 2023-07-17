@@ -14,7 +14,7 @@ Nwaypoint = []
 #print(len(waypoint))
 
 window = (1200, 720)
-start = (600,200)
+start = (620,700)
 running = True
 environment = gui.Envir(window)
 
