@@ -4,6 +4,7 @@ import  pygame
 import calcu as ca
 import pygameGUI as gui
 import read_kml as kml
+import line
 
 pygame.init()
 
@@ -21,7 +22,7 @@ environment = gui.Envir(window)
 dt = 0
 lasttime = pygame.time.get_ticks()
 
-robot = gui.Robot(start, r"SpeVm6L - Imgur.png",80)
+robot = gui.Robot(start, r"SpeVm6L - Imgur.png",0.40)
 
 clock = pygame.time.Clock()
 
@@ -56,6 +57,7 @@ def main():
 point = environment.draw_path(waypoint, Nwaypoint).copy()
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    line.Line_kml(Nwaypoint)
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

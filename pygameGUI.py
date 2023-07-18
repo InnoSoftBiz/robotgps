@@ -10,7 +10,7 @@ class Robot:
         self.theta = 0
         self.w = 0  # angular velocity (rad/sec)
         self.u = 0  # linear velocity (pixels/sec)
-        self.a = 82
+        self.a = 8.4
         self.img = pygame.image.load(robotimg)  # skin img path provided in the arguments
         self.follow = follow
         self.vr = 0
