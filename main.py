@@ -22,7 +22,7 @@ environment = gui.Envir(window)
 dt = 0
 lasttime = pygame.time.get_ticks()
 
-robot = gui.Robot(start, r"SpeVm6L - Imgur.png",0.4)
+robot = gui.Robot(start, r"SpeVm6L - Imgur.png",0.342)
 
 clock = pygame.time.Clock()
 
