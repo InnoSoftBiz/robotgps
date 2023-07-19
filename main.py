@@ -15,14 +15,14 @@ Nwaypoint = []
 #print(len(waypoint))
 
 window = (1200, 720)
-start = (620,700)
+start = (620,360)
 running = True
 environment = gui.Envir(window)
 
 dt = 0
 lasttime = pygame.time.get_ticks()
 
-robot = gui.Robot(start, r"SpeVm6L - Imgur.png",0.40)
+robot = gui.Robot(start, r"SpeVm6L - Imgur.png",0.324)
 
 clock = pygame.time.Clock()
 
