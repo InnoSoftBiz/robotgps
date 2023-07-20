@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Style id="4">
+            <LineStyle id="5">
+                <color>ff00ffff</color>
+                <colorMode>normal</colorMode>
+                <width>5</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="3">
+            <name>Line path Robot</name>
+            <styleUrl>#4</styleUrl>
+            <LineString id="2">
+                <altitudeMode>relativeToGround</altitudeMode>
+                <coordinates>100.5448483011969,13.87014168838915,0.0 100.5447085110301,13.8701375924882,0.0 100.5446854758535,13.87045761825789,0.0 100.5450801592699,13.87057156501136,0.0 100.5455773789436,13.87065236496717,0.0 100.545996286435,13.87070834144335,0.0 100.5471326776453,13.87087686540822,0.0 100.5472021971058,13.87088677833917,0.0 100.5473360535843,13.87086287599701,0.0 100.5482773619036,13.87063731354628,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

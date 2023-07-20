@@ -7,6 +7,7 @@ def Line_kml(waypoint):
         Gwaypoint.append(path)
 
     kml = simplekml.Kml()
+    #pixel = simplekml.Units(Gwaypoint)
     ls = kml.newlinestring(name = 'Line path Robot')
     ls.coords = Gwaypoint
     ls.exetrude = 1
