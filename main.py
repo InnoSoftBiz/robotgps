@@ -3,26 +3,22 @@ import math
 import  pygame
 import calcu as ca
 import pygameGUI as gui
-import read_kml as kml
+import read_filewaypoint as mp
 import line
 
 pygame.init()
 
-rkml = kml.KML("TestFollow.kml")
-rkml.kml_to_csv()
-waypoint = rkml.unzip()
+rmp = mp.read_mp("Tmission.waypoints")
+waypoint = rmp
 Nwaypoint = []
 #print(len(waypoint))
 
 window = (1200, 720)
-start = (620,360)
-running = True
 environment = gui.Envir(window)
+running = True
 
 dt = 0
 lasttime = pygame.time.get_ticks()
-
-robot = gui.Robot(start, r"SpeVm6L - Imgur.png",0.342)
 
 clock = pygame.time.Clock()
 
@@ -40,6 +36,8 @@ for i in range(len(waypoint)-1):
         der = calculate.destination(waypoint[i])
 Nwaypoint.append(waypoint[len(waypoint)-1])
 #print(Nwaypoint)
+start = (environment.draw_path(waypoint, Nwaypoint)[0])
+robot = gui.Robot(start, r"SpeVm6L - Imgur.png", 80)
 
 def main():
     pygame.display.update()
@@ -47,7 +45,7 @@ def main():
     environment.draw_path(waypoint, Nwaypoint)
     robot.draw(environment.map)
     environment.write_info(int(robot.vl), int(robot.vr), robot.theta)
-    environment.robot_frame((robot.x, robot.y), robot.theta)
+    #environment.robot_frame((robot.x, robot.y), robot.theta)
     environment.trail((robot.x, robot.y))
     # if robot.vl != robot.vr:
     #     print(robot.vl, robot.vr)

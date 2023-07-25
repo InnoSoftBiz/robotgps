@@ -1,17 +1,25 @@
-fistlist = []
-seclist = []
-theelist = []
+import numpy as np
 
-with open("Tmission.waypoints", 'r') as file:
-    for line in file:
-        grade_data = line.strip().split(',')
-        #print(grade_data)
-        #print(line)
-        fistlist.append(line.strip().split(','))
-    #print(fistlist)
-    seclist = fistlist[1::]
-    print(seclist)
-    for i in range(len(seclist)):
-        path = seclist[i]
-        print(path.replace('\t', ','))
-        #print(i.strip().split(','))
+def read_mp(file_mp):
+    fistlist = []
+    seclist = []
+    with open(file_mp, 'r') as file:
+        for line in file:
+            grade_data = line.replace('\t', ' ')
+            fistlist.append(grade_data)
+        fistlist = fistlist[1::]
+
+        fistlist = np.array(fistlist)
+
+        for x in fistlist:
+            li = list(x.split(" "))
+            lat = float(li[8])
+            lon = float(li[9])
+            path = (lat,lon)
+            seclist.append(path)
+                #print(seclist)
+
+        return seclist
+
+if __name__ == "__main__":
+    print(read_mp())

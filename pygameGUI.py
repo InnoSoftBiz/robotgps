@@ -10,7 +10,7 @@ class Robot:
         self.theta = 0
         self.w = 0  # angular velocity (rad/sec)
         self.u = 0  # linear velocity (pixels/sec)
-        self.a = 0.84
+        self.a = self.width/2
         self.img = pygame.image.load(robotimg)  # skin img path provided in the arguments
         self.follow = follow
         self.vr = 0
@@ -27,9 +27,9 @@ class Robot:
         #print(self.w, (self.vr-self.vl)/self.width)
 
     def move(self, dt):
-        self.theta += self.w * dt
-        self.x += ((self.vl+self.vr)/2) * math.cos(self.theta) * dt
-        self.y += ((self.vl+self.vr)/2) * math.sin(self.theta) * dt
+        self.theta += self.w*dt
+        self.x += self.u * math.cos(self.theta) * dt
+        self.y += self.u * math.sin(self.theta) * dt
         # self.vr = self.u + ((self.width / 2) * self.w)
         # self.vl = self.u - ((self.width / 2) * self.w)
 
