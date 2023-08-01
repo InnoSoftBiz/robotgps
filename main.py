@@ -8,7 +8,7 @@ import line
 
 pygame.init()
 
-rmp = mp.read_mp("Tmission.waypoints")
+rmp = mp.read_mp("mainpath.waypoints") #mainpath.waypoints
 waypoint = rmp
 Nwaypoint = []
 #print(len(waypoint))
@@ -35,7 +35,7 @@ for i in range(len(waypoint)-1):
         Nwaypoint.append(pos)
         der = calculate.destination(waypoint[i])
 Nwaypoint.append(waypoint[len(waypoint)-1])
-#print(Nwaypoint)
+print(Nwaypoint)
 start = (environment.draw_path(waypoint, Nwaypoint)[0])
 robot = gui.Robot(start, r"SpeVm6L - Imgur.png", 80)
 

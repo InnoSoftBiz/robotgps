@@ -10,9 +10,13 @@ def read_mp(file_mp):
         fistlist = fistlist[1::]
 
         fistlist = np.array(fistlist)
+        #print(fistlist)
 
         for x in fistlist:
             li = list(x.split(" "))
+            print(li)
+            if len(li) < 12:
+                continue
             lat = float(li[8])
             lon = float(li[9])
             path = (lat,lon)

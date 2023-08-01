@@ -88,6 +88,7 @@ class Envir:
         min_lat = allpos[0:len(allpos), 0].min()
         max_lon = allpos[0:len(allpos), 1].max()
         max_lat = allpos[0:len(allpos), 0].max()
+        #print(min_lon, min_lat, max_lat, max_lon)
 
         main = np.array(main)
         mmin_lon =  main[0:len(main), 1].min()
@@ -99,6 +100,7 @@ class Envir:
         mainlist = []
 
         for lat, lon in allpos:
+            #print(lon,lat)
             x = (self.width // 2) + int((lon - min_lon) * self.width / (max_lon - min_lon))
             y = (self.height // 2) + int((lat - min_lat) * self.height / (max_lat - min_lat))
             poslist.append((x//2, y//2))
